@@ -50,7 +50,7 @@ BOARD_KERNEL_CMDLINE := androidboot.console=ttyMSM0 androidboot.hardware=qcom
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += swiotlb=2048
-
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 
@@ -110,7 +110,7 @@ AUDIO_FEATURE_ENABLED_RAS := true
 
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
-USE_CUSTOM_AUDIO_POLICY := 1
+#USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
