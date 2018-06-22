@@ -16,8 +16,8 @@
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay 
+#    $(LOCAL_PATH)/overlay-lineage
 
 #PRODUCT_ENFORCE_RRO_TARGETS := \
 #    framework-res
@@ -77,7 +77,8 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
+# Audio configuration file
+include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -125,7 +126,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap
+    ParanoidCamera
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
@@ -248,10 +249,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_msm8998
 
-# LiveDisplay jni
-  PRODUCT_PACKAGES += \
-    libjni_livedisplay
-
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
@@ -302,7 +299,7 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
 # Properties
-include $(LOCAL_PATH)/vendor_prop.mk
+include $(LOCAL_PATH)/system.prop
 
 # QCOM
 PRODUCT_COPY_FILES += \
