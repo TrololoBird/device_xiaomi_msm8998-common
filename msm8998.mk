@@ -16,8 +16,8 @@
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay 
+#    $(LOCAL_PATH)/overlay-lineage
 
 #PRODUCT_ENFORCE_RRO_TARGETS := \
 #    framework-res
@@ -73,7 +73,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
-
+include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -208,11 +208,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.manager@1.0
 
 # IMS
 PRODUCT_PACKAGES += \
