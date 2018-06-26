@@ -19,17 +19,17 @@ $(call inherit-product, vendor/xiaomi/msm8998-common/msm8998-common-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+#PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
 
-PRODUCT_PACKAGES += \
-    omni_charger_res_images
+#PRODUCT_PACKAGES += \
+#    omni_charger_res_images
 
 # Live Wallpapers
-PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    VisualizationWallpapers \
-    librs_jni
+#PRODUCT_PACKAGES += \
+#    LiveWallpapers \
+#    LiveWallpapersPicker \
+#    VisualizationWallpapers \
+#    librs_jni
 
 # USB
 PRODUCT_PACKAGES += \
@@ -84,7 +84,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
+include $(TOPDIR)hardware/qcom/audio/configs/msm8998/msm8998.mk
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -166,9 +166,9 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Xiaomi
-PRODUCT_PACKAGES += \
-    XiaomiDoze \
-    XiaomiParts
+#PRODUCT_PACKAGES += \
+#    XiaomiDoze \
+#    XiaomiParts
 
 # DRM
 PRODUCT_PACKAGES += \
